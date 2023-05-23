@@ -10,7 +10,7 @@ import img6 from '../../assets/home/Banner/06.png'
 const Banner = () => {
     return (
         <div >
-            <Carousel centerSlidePercentage={true} centerMode={true}>
+            <Carousel>
                 <div>
                     <img src={img1} />
                 </div>
