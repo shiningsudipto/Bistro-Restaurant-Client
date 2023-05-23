@@ -5,6 +5,7 @@ import ChefRecommend from "./ChefRecommend";
 import FeaturedItem from "./FeaturedItem";
 import PopularMenu from "./PopularMenu";
 import SubBanner from "./SubBanner";
+import Testimonials from "./Testimonials";
 
 const Home = () => {
     return (
@@ -16,6 +17,7 @@ const Home = () => {
             <CallDetails />
             <ChefRecommend />
             <FeaturedItem />
+            <Testimonials />
         </div>
     );
 };
