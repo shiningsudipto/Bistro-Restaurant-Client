@@ -13,7 +13,6 @@ const Menu = () => {
                 title={'OUR MENU'}
                 subTitle={'would you like to try a dish'}
             ></Cover>
-
         </div>
     );
 };
