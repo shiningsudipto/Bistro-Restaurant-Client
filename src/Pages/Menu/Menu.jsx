@@ -34,7 +34,6 @@ const Menu = () => {
                 >
                 </SectionTitle>
                 <MenuCategory items={offeredItem}></MenuCategory>
-                <UnderLineBtn btnText={"order your favorite food"} />
             </div>
             <div className="my-14">
                 <MenuCategory
@@ -43,7 +42,6 @@ const Menu = () => {
                     title={"desserts"}
                     subTitle={"Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."}
                 ></MenuCategory>
-                <UnderLineBtn btnText={"order your favorite food"} />
             </div>
             <div className="my-14">
                 <MenuCategory
@@ -52,7 +50,6 @@ const Menu = () => {
                     title={"pizza"}
                     subTitle={"Pizza is a dish of Italian origin consisting of a usually round, flat base of leavened wheat-based dough topped with tomatoes, cheese, and often various other ingredients, which is then baked at a high temperature, traditionally in a wood-fired oven."}
                 ></MenuCategory>
-                <UnderLineBtn btnText={"order your favorite food"} />
             </div>
             <div className="my-14">
                 <MenuCategory
@@ -61,7 +58,7 @@ const Menu = () => {
                     title={"salads"}
                     subTitle={"These easy salad recipes are perfect for lunches, summer cookouts, and dinner parties! Healthy and delicious, each one can double as a main or side dish!"}
                 ></MenuCategory>
-                <UnderLineBtn btnText={"order your favorite food"} />
+
             </div>
             <div className="my-14">
                 <MenuCategory
@@ -70,7 +67,7 @@ const Menu = () => {
                     title={"soup"}
                     subTitle={"Soup is a primarily liquid food, generally served warm or hot that is made by combining ingredients of meat or vegetables with stock, milk, or water."}
                 ></MenuCategory>
-                <UnderLineBtn btnText={"order your favorite food"} />
+
             </div>
         </div>
     );

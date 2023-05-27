@@ -1,5 +1,7 @@
 import MenuItems from "./MenuItems";
 import Cover from "../../Components/Cover";
+import { Link } from "react-router-dom";
+import UnderLineBtn from "../../Components/UnderLineBtn";
 const MenuCategory = ({ items, title, coverImg, subTitle }) => {
     return (
         <div>
@@ -14,6 +16,9 @@ const MenuCategory = ({ items, title, coverImg, subTitle }) => {
                     ></MenuItems>)
                 }
             </div>
+            <Link to={`/order/${title}`}>
+                <UnderLineBtn btnText={"order your favorite food"} />
+            </Link>
         </div>
     );
 };
