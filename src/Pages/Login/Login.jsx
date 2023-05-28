@@ -1,21 +1,45 @@
 import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-simple-captcha';
 import img from '../../assets/others/authentication2.png';
-import { useEffect, useRef, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { AuthContext } from '../../Provider/AuthProvider';
+import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
+
 const Login = () => {
-    const captchaRef = useRef(null);
+
+    const { signIn } = useContext(AuthContext);
     const [disabled, setDisabled] = useState(true);
+    const [error, setError] = useState('');
+
     useEffect(() => {
         loadCaptchaEnginge(6);
-    }, [])
-    const handleLogIn = (event) => {
+    }, []);
+
+    const handleLogin = event => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
         console.log(email, password);
+        signIn(email, password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                Swal.fire({
+                    title: 'User Login Successful.',
+                    showClass: {
+                        popup: 'animate__animated animate__fadeInDown'
+                    },
+                    hideClass: {
+                        popup: 'animate__animated animate__fadeOutUp'
+                    }
+                });
+
+            })
     }
-    const handleValidateCaptchaValue = () => {
-        const userCaptchaValue = captchaRef.current.value;
+    const handleValidateCaptchaValue = (event) => {
+        const userCaptchaValue = event.target.value;
         console.log(userCaptchaValue);
         if (validateCaptcha(userCaptchaValue)) {
             setDisabled(false);
@@ -25,6 +49,9 @@ const Login = () => {
     }
     return (
         <div>
+            <Helmet>
+                <title> BISTRO | Login</title>
+            </Helmet>
             <div className="hero min-h-screen">
                 <div className="hero-content flex flex-col md:flex-row">
                     <div className="text-center lg:text-left">
@@ -32,7 +59,7 @@ const Login = () => {
                     </div>
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                         <div className="card-body">
-                            <form onSubmit={handleLogIn}>
+                            <form onSubmit={handleLogin}>
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">Email</span>
@@ -44,21 +71,18 @@ const Login = () => {
                                         <span className="label-text">Password</span>
                                     </label>
                                     <input type="password" name='password' placeholder="password" className="input input-bordered" />
-                                    <label className="label">
-                                        <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                                    </label>
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
                                         <LoadCanvasTemplate />
                                     </label>
-                                    <input ref={captchaRef} type="text" name='captcha' placeholder="captcha" className="input input-bordered" />
-                                    <button onClick={handleValidateCaptchaValue} className='btn btn-xs btn-outline my-3'>Validate</button>
+                                    <input onBlur={handleValidateCaptchaValue} type="text" name='captcha' placeholder="captcha" className="input input-bordered" />
                                 </div>
                                 <div className="form-control mt-6">
                                     <button disabled={disabled} className="btn btn-primary">Login</button>
                                 </div>
                             </form>
+                            <p>Dont have an account? <Link className='text-red-600 font-semibold my-3' to='/signUp'>Sign Up</Link></p>
                         </div>
                     </div>
                 </div>
