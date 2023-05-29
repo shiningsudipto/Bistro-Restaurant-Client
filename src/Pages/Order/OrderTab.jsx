@@ -2,7 +2,7 @@ import FoodCard from "../../Components/FoodCard";
 
 const OrderTab = ({ items }) => {
     return (
-        <div className="grid grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 grid-cols-1 gap-6">
             {
                 items.map(item => <FoodCard
                     key={item._id}
