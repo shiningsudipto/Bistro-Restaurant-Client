@@ -9,6 +9,13 @@ import Login from "../Pages/Login/Login";
 import SignUp from "../Pages/SignUp/SignUp";
 import Secret from "../Pages/Secret";
 import PrivateRoute from "./PrivateRoute";
+import Dashboard from "../Layout/Dashboard";
+import MyCart from "../Dashboard/MyCart";
+import UserHome from "../Dashboard/UserHome";
+import Reservation from "../Dashboard/Reservation";
+import History from "../Dashboard/History";
+import Review from "../Dashboard/Review";
+import Booking from "../Dashboard/Booking";
 
 
 export const router = createBrowserRouter([
@@ -42,4 +49,34 @@ export const router = createBrowserRouter([
             }
         ],
     },
+    {
+        path: 'dashboard',
+        element: <Dashboard></Dashboard>,
+        children: [
+            {
+                path: 'mycart',
+                element: <MyCart />
+            },
+            {
+                path: 'userhome',
+                element: <UserHome />
+            },
+            {
+                path: 'reservation',
+                element: <Reservation />
+            },
+            {
+                path: 'history',
+                element: <History />
+            },
+            {
+                path: 'review',
+                element: <Review />
+            },
+            {
+                path: 'booking',
+                element: <Booking />
+            }
+        ]
+    }
 ]);

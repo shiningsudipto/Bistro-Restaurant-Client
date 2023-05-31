@@ -5,3 +5,8 @@
 .carousel .thumbs {
     text-align: center;
 }
+
+.drawer-side a.active {
+    color: white;
+    background-color: transparent;
+}
