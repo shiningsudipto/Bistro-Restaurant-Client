@@ -16,6 +16,7 @@ import Reservation from "../Dashboard/Reservation";
 import History from "../Dashboard/History";
 import Review from "../Dashboard/Review";
 import Booking from "../Dashboard/Booking";
+import AllUsers from "../Dashboard/Admin/AllUsers";
 
 
 export const router = createBrowserRouter([
@@ -76,6 +77,10 @@ export const router = createBrowserRouter([
             {
                 path: 'booking',
                 element: <Booking />
+            },
+            {
+                path: 'allusers',
+                element: <AllUsers />
             }
         ]
     }

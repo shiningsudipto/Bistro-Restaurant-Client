@@ -33,7 +33,7 @@ const SignUp = () => {
                         })
                             .then(res => res.json())
                             .then(data => {
-                                if (data.inserted) {
+                                if (data.insertedId) {
                                     Swal.fire({
                                         position: 'top-end',
                                         icon: 'success',
