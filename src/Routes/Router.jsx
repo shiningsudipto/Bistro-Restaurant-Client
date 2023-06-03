@@ -18,6 +18,7 @@ import Review from "../Dashboard/Review";
 import Booking from "../Dashboard/Booking";
 import AllUsers from "../Dashboard/Admin/AllUsers";
 import AddItems from "../Dashboard/Admin/AddItems";
+import ManageItems from "../Dashboard/Admin/ManageItems";
 
 
 export const router = createBrowserRouter([
@@ -86,6 +87,10 @@ export const router = createBrowserRouter([
             {
                 path: 'additems',
                 element: <AddItems />
+            },
+            {
+                path: 'manageitems',
+                element: <ManageItems />
             }
         ]
     }
