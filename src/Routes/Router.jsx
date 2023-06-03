@@ -17,6 +17,7 @@ import History from "../Dashboard/History";
 import Review from "../Dashboard/Review";
 import Booking from "../Dashboard/Booking";
 import AllUsers from "../Dashboard/Admin/AllUsers";
+import AddItems from "../Dashboard/Admin/AddItems";
 
 
 export const router = createBrowserRouter([
@@ -81,6 +82,10 @@ export const router = createBrowserRouter([
             {
                 path: 'allusers',
                 element: <AllUsers />
+            },
+            {
+                path: 'additems',
+                element: <AddItems />
             }
         ]
     }
