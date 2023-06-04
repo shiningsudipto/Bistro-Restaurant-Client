@@ -19,6 +19,7 @@ import Booking from "../Dashboard/Booking";
 import AllUsers from "../Dashboard/Admin/AllUsers";
 import AddItems from "../Dashboard/Admin/AddItems";
 import ManageItems from "../Dashboard/Admin/ManageItems";
+import Payment from "../Dashboard/Payment/Payment";
 
 
 export const router = createBrowserRouter([
@@ -59,6 +60,10 @@ export const router = createBrowserRouter([
             {
                 path: 'mycart',
                 element: <MyCart />
+            },
+            {
+                path: 'payment',
+                element: <Payment />
             },
             {
                 path: 'userhome',

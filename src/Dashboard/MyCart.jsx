@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet-async";
 import useCart from "../Hooks/useCart";
 import { FaTrashAlt } from "react-icons/fa";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const MyCart = () => {
     const [cart, refetch] = useCart();
@@ -45,7 +46,8 @@ const MyCart = () => {
             <div className="w-full flex justify-between uppercase my-4">
                 <h3 className="text-3xl font-semibold text-center">Total Order: {cart.length}</h3>
                 <h3 className="text-3xl font-semibold text-center">Total Price: {total}</h3>
-                <button className="btn btn-warning">Pay</button>
+                {/* <button className="btn btn-warning">Pay</button> */}
+                <Link to='/dashboard/payment' className="btn btn-warning">Pay</Link>
             </div>
             <div>
                 <div className="overflow-x-auto w-full">
@@ -82,8 +84,6 @@ const MyCart = () => {
                                     </td>
                                 </tr>)
                             }
-                            {/* row 1 */}
-
                         </tbody>
                     </table>
                 </div>
