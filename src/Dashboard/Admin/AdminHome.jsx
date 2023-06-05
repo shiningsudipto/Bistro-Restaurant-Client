@@ -7,9 +7,6 @@ import { PieChart, Pie, ResponsiveContainer } from 'recharts';
 
 // const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
 
-
-
-
 const AdminHome = () => {
     const { user } = useAuth();
     const [axiosSecure] = useAxiosSecure();
@@ -45,7 +42,7 @@ const AdminHome = () => {
     };
 
     const RADIAN = Math.PI / 180;
-    const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent, index }) => {
+    const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, percent }) => {
         const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
         const x = cx + radius * Math.cos(-midAngle * RADIAN);
         const y = cy + radius * Math.sin(-midAngle * RADIAN);
@@ -67,7 +64,7 @@ const AdminHome = () => {
                 <div>
                     <div className="flex justify-between items-center py-3 px-8 bg-gradient-to-r from-purple-700 to-slate-300 rounded-xl text-white w-52">
                         <FaWallet className="text-4xl" />
-                        <div>
+                        <div className="text-center">
                             <h2 className="text-5xl font-bold">{status.revenue}</h2>
                             <p className="text-xl">Revenue</p>
                         </div>
@@ -76,7 +73,7 @@ const AdminHome = () => {
                 <div>
                     <div className="flex justify-between items-center py-3 px-8 bg-gradient-to-r from-[#D3A256] to-slate-300 rounded-xl text-white w-52">
                         <FaUsers className="text-4xl" />
-                        <div>
+                        <div className="text-center">
                             <h2 className="text-5xl font-bold">{status.users}</h2>
                             <p className="text-xl">Customers</p>
                         </div>
@@ -85,7 +82,7 @@ const AdminHome = () => {
                 <div>
                     <div className="flex justify-between items-center py-3 px-8 bg-gradient-to-r from-[#FE4880] to-slate-300 rounded-xl text-white w-52">
                         <FaPeopleCarry className="text-4xl" />
-                        <div >
+                        <div className="text-center">
                             <h2 className="text-5xl font-bold">{status.products}</h2>
                             <p className="text-xl">Products</p>
                         </div>
@@ -94,7 +91,7 @@ const AdminHome = () => {
                 <div>
                     <div className="flex justify-between items-center py-3 px-8 bg-gradient-to-r from-sky-400 to-slate-300 rounded-xl text-white w-52">
                         <FaTruck className="text-4xl" />
-                        <div>
+                        <div className="text-center">
                             <h2 className="text-5xl font-bold">{status.orders}</h2>
                             <p className="text-xl">Orders</p>
                         </div>
