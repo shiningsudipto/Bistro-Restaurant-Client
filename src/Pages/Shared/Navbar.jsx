@@ -23,7 +23,6 @@ const Navbar = () => {
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/menu'>Our Menu</Link></li>
         <li><Link to='/order/salads'>Order</Link></li>
-        <li><Link to='/secret'>Secret</Link></li>
         {
             isAdmin ? <li><Link to='/dashboard/adminhome'>Dashboard</Link></li>
                 :

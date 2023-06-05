@@ -9,7 +9,7 @@
 //     // Fetch data from the API
 //     const fetchData = async (page) => {
 //         try {
-//             const response = await fetch(`http://localhost:5000/menu?page=${page}&limit=${itemsPerPage}`);
+//             const response = await fetch(`https://bistro-restaurant-server.vercel.app/menu?page=${page}&limit=${itemsPerPage}`);
 //             const jsonData = await response.json();
 //             setData(jsonData.data);
 //             setTotalPages(jsonData.totalPages);

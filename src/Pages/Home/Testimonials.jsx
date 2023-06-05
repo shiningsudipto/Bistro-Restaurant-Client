@@ -11,7 +11,7 @@ import { useEffect, useState } from "react";
 const Testimonials = () => {
     const [reviews, setReview] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/reviews')
+        fetch('https://bistro-restaurant-server.vercel.app/reviews')
             .then(res => res.json())
             .then(data => setReview(data))
     }, [])
