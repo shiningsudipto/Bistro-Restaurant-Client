@@ -20,6 +20,8 @@ import AllUsers from "../Dashboard/Admin/AllUsers";
 import AddItems from "../Dashboard/Admin/AddItems";
 import ManageItems from "../Dashboard/Admin/ManageItems";
 import Payment from "../Dashboard/Payment/Payment";
+import AdminHome from "../Dashboard/Admin/AdminHome";
+import AdminRoute from "./AdminRoute";
 
 
 export const router = createBrowserRouter([
@@ -55,47 +57,51 @@ export const router = createBrowserRouter([
     },
     {
         path: 'dashboard',
-        element: <Dashboard></Dashboard>,
+        element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
         children: [
             {
                 path: 'mycart',
-                element: <MyCart />
-            },
-            {
-                path: 'payment',
-                element: <Payment />
+                element: <PrivateRoute><MyCart /></PrivateRoute>
             },
             {
                 path: 'userhome',
-                element: <UserHome />
+                element: <PrivateRoute><UserHome /></PrivateRoute>
+            },
+            {
+                path: 'payment',
+                element: <PrivateRoute> <Payment /></PrivateRoute>
             },
             {
                 path: 'reservation',
-                element: <Reservation />
+                element: <PrivateRoute> <Reservation /></PrivateRoute>
             },
             {
                 path: 'history',
-                element: <History />
+                element: <PrivateRoute> <History /></PrivateRoute>
             },
             {
                 path: 'review',
-                element: <Review />
+                element: <PrivateRoute><Review /></PrivateRoute>
             },
             {
-                path: 'booking',
-                element: <Booking />
-            },
-            {
-                path: 'allusers',
-                element: <AllUsers />
+                path: 'adminhome',
+                element: <AdminRoute><AdminHome /></AdminRoute>
             },
             {
                 path: 'additems',
-                element: <AddItems />
+                element: <AdminRoute><AddItems /></AdminRoute>
             },
             {
                 path: 'manageitems',
-                element: <ManageItems />
+                element: <AdminRoute> <ManageItems /></AdminRoute>
+            },
+            {
+                path: 'booking',
+                element: <AdminRoute><Booking /></AdminRoute>
+            },
+            {
+                path: 'allusers',
+                element: <AdminRoute><AllUsers /></AdminRoute>
             }
         ]
     }
